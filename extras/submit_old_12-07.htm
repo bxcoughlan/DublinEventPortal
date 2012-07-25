@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<title>Portal to all Public Events in Ireland's Capital City</title>
+	<!-- css file for JQuery datepicker plugin -->
+  <link  rel="stylesheet" type="text/css" href="jquery/css/custom-theme/jquery-ui-1.8.21.custom.css" />
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+  <link rel="stylesheet" type="text/css" href="css/submit.css" />
+	<!-- include for JQuery Datapicker plugin file -->
+	<script type="text/javascript" src="jquery/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="jquery/js/jquery-ui-1.8.21.custom.min.js"></script>
+	<script type="text/javascript" src="js/advertSwap.js"> </script>
+	<script type="text/javascript" src="js/validateSub.js"></script>
+	<!-- script for activation of "datepicker" popup -->
+	<script type="text/javascript">
+	$(function() {
+		$( "#dateinput" ).datepicker({ dateFormat: "dd/mm/yy" });
+	});
+	</script>
+</head>
+<body onload="swapAdvert()">
+ <!-- comments -->
+ <div id='container'>
+  <div id='header'>
+    <a id='headerimg' href="index.htm"><img src="images/castles.jpg" alt="" /></a>
+		<h1 id='headertext'>Dublin Event Portal</h1>
+  </div>
+  <div id='nav'>
+	  <ol id='eventmenu'>
+	    <li><a href="index.htm">Home</a></li>
+		  <li><a href="calender.htm">Calender</a></li>
+		  <li><a href="map.htm">Map</a></li>
+		  <li class='current'><a href="submit.htm">Submit</a></li>
+		  <li><a href="reviews.htm">Reviews</a></li>
+		  <li><a href="contact.htm">Contact</a></li>
+    </ol>
+	</div>
+  <div id='sidebar'>
+	  <div id='facebook'>
+		  <img src="images/facebook.jpg" alt="" />
+	  </div>
+	  <hr id='sidedivider' />
+	  <div id='rssfeed'>
+    <script type="text/javascript" src="http://itde.vccs.edu/rss2js/feed2js.php?src=http%3A%2F%2Frss.feedsportal.com%2Fc%2F851%2Ff%2F10838%2Findex.rss&amp;chan=y&amp;num=3&amp;desc=0&amp;date=y&amp;targ=y"></script>
+    <noscript>
+      <p><a href="http://itde.vccs.edu/rss2js/feed2js.php?src=http%3A%2F%2Frss.feedsportal.com%2Fc%2F851%2Ff%2F10838%2Findex.rss&amp;chan=y&amp;num=3&amp;desc=0&amp;date=y&amp;targ=y&amp;html=y">View RSS feed</a></p>
+    </noscript>
+		</div>
+  </div>
+  <div id='content'>
+		 <h2 class='submitTitle'>Submit an Event</h2>
+		 <div id = "submitbody">
+		   <p class='submitTitle'>Please enter the details of your event in the below form for submission.</p>
+<!--			 <form name="submitForm" method="post" action="emailSubmit.php" onsubmit="return validate();" > -->
+		   <form id="submitform" method="post" action="http://www.braemoor.co.uk/cgi-bin/formtest.cgi" onsubmit="return validate();" >
+     	   <fieldset id="submitdetails">
+				   <legend>Event Details</legend>
+				   <div id="userDetails">
+	         <label id="namelabel">Name:</label> <input id="subname" type="text" name="subname" size="40"  maxlength="30" /> <br />
+		       <label id="emaillabel">Email Address:</label> <input id="subemail" type="text" name="subemail" size="40" maxlength="30" /> <br />
+		       <label id="weblabel">Website:</label> <input id="subwebsite" type="text" name="subwebsite" size="40" maxlength="30" /> <br />
+					 </div>
+				   <div id="location">
+	            <label id ="locLabel">Please enter Address/Location of event</label> <br />
+							<textarea name="locDesc" rows="3" cols="55"></textarea>
+	          </div>
+						<div id="date">
+	            <label id = "datelabel">Please enter date for the event</label> <br />
+							<input id="dateinput" type="text" name="dateinput" size="40" maxlength="30" /> <br />
+	          </div>
+	         	<div id="eventType">
+						    <label>What type of Event is it?</label> <br />
+								<div class="radiobuttons">
+                  <input class="eventradiocheck" type="radio" name="eventtype" value="C"/>Concert
+		              <input class="eventradiocheck" type="radio" name="eventtype" value="T"/>Theatre
+			            <input class="eventradiocheck" type="radio" name="eventtype" value="F"/>Festival<br />
+			            <input class="eventradiocheck" type="radio" name="eventtype" value="A"/>Art
+									<input class="eventradiocheck" type="radio" name="eventtype" value="C"/>Cinema
+			            <input class="eventradiocheck" type="radio" name="eventtype" value="S"/>Sports
+			            <input class="eventradiocheck" type="radio" checked="checked" name="eventtype" value="O"/>Other								
+								</div>
+						</div>
+					  <div id="textDesc">
+	            <label>Event Description</label> <br />
+							<textarea name="eventDesc" rows="10" cols="55"></textarea>
+	          </div>
+						<div id="userFeedback">
+			        <label>How did you hear about this site?</label><br />
+							<div class="radiobuttons">
+		            <input class="eventradiocheck" type="radio" name="refer" value="P" />Print Media
+			          <input class="eventradiocheck" type="radio" name="refer" value="I" />Internet<br />
+			          <input class="eventradiocheck" type="radio" name="refer" value="WM" />Word of Mouth
+								<input class="eventradiocheck" type="radio" checked="checked" name="refer" value="OT" />Other
+							</div>
+						</div>
+         	 <div id="submitButtons">
+					   <input type="submit" id="submit" value="Submit Event" onmouseover="this.style.color='white'" onmouseout="this.style.color='#000080'"/>
+						 <input type="reset" id="reset" value="Clear all...." onmouseover="this.style.color='white'" onmouseout="this.style.color='#000080'"/>
+					 </div>
+         </fieldset>
+     </form>
+		 
+		 </div> <!-- close of submitbody -->
+
+  </div>
+  <div id='adverts'>
+	  <img id='img1' src="images/adverts1.jpg" alt="" />
+		<img id='img2' src="images/adverts2.jpg" alt="" />
+		<img id='img3' src="images/adverts3.jpg" alt="" />
+  </div>
+  <div id='footer'>
+		<img id='footerimg' src="images/skyline.jpg" alt="" height="74px" width="200px" />
+		<p>&copy;Dublin Event Portal 2012</p>
+		<p><a href='mailto:info@dublineventportal.ie'>Email : info@dublineventportal.ie</a></p>
+  </div>
+ </div>
+</body>
+</html>

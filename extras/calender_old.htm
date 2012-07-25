@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<title>Portal to all Public Events in Ireland's Capital City</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<!-- css file for JQuery dialog plugin -->
+  <link  rel="stylesheet" type="text/css" href="jquery/css/custom-theme/jquery-ui-1.8.21.custom.css" />
+	<!-- CSS file for FullCalender JQuery plugin - http://arshaw.com/fullcalendar/ -->
+	<link rel='stylesheet' type='text/css' href='fullcalendar-1.5.3/fullcalendar/fullcalendar.css' />
+	<!-- include for JQuery Dialog plugin file -->
+	<script type="text/javascript" src="jquery/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="jquery/js/jquery-ui-1.8.21.custom.min.js"></script>
+	<!-- JS file for FullCalender JS/Jquery plugin - http://arshaw.com/fullcalendar/ -->
+  <script type='text/javascript' src='fullcalendar-1.5.3/fullcalendar/fullcalendar.js'></script>
+	<script type="text/javascript" src="js/advertSwap.js"> </script>
+	<!-- script to provide for popup dialog for event details -->
+	<script type="text/javascript">
+	  $(function() {
+		  $( "#dialog" ).dialog({ autoOpen: false });
+			$( "#dialog" ).dialog({ minWidth: 400 });
+	  });
+	</script>
+	<!-- script to place the FullCalender Plugin into the "Calender" div in the main file -->
+	<script type="text/javascript">
+	  var eventsArray = [];
+    var retrievedEvent = [];
+		
+		// set up the event entry for each event
+		// with a full set up with a database on the server side, event details could be fetched from the DB
+		// and inserted into the array
+    retrievedEvent[0] = "Wrecking Ball Tour";		 					// this is the name of the event as it appears on the calender
+	  retrievedEvent[1] = "Bruce Springsteen - Wrecking Ball Tour";	// this is the full name of the event - appears in dialog window		
+		retrievedEvent[2] = "Tue, 17 Jul 2012 19:00:00 GMT";	 // date of event
+		retrievedEvent[3] = "http://brucespringsteen.net/";		 // website of event
+		retrievedEvent[4] = "images/springsteen1_thumb.jpg";	 // image/logo of event
+		eventsArray.push(retrievedEvent);
+
+		var retrievedEvent2 = [];
+		retrievedEvent2[0] = "My Event4";
+		retrievedEvent2[1] = "My Event4";
+		retrievedEvent2[2] = "Sat, 14 Jul 2012 13:00:00 GMT";
+		retrievedEvent2[3] = "http://google.com/";
+		retrievedEvent2[4] = "images/castles.jpg";
+		eventsArray.push(retrievedEvent2);
+		
+		var retrievedEvent3 = [];
+		retrievedEvent3[0] = "My Event3";
+		retrievedEvent3[1] = "My Event3";
+		retrievedEvent3[2] = "Tue, 14 Aug 2012 13:00:00 GMT";
+		retrievedEvent3[3] = "http://google.com/";
+		retrievedEvent3[4] = "images/castles.jpg";
+		eventsArray.push(retrievedEvent3);
+		
+		var retrievedEvent4 = [];
+		retrievedEvent4[0] = "My Event2";
+		retrievedEvent4[1] = "My Event2";
+		retrievedEvent4[2] = "Sat, 21 Jul 2012 13:00:00 GMT";
+		retrievedEvent4[3] = "http://google.com/";
+		retrievedEvent4[4] = "images/castles.jpg";
+		eventsArray.push(retrievedEvent4);
+		
+		var formattedEventInfo = [];
+		for (var i = 0; i < eventsArray.length; i++) {
+    		formattedEventInfo.push({
+        	title: eventsArray[i][0],
+					fullTitle: eventsArray[i][1],
+					start: eventsArray[i][2],
+          url: eventsArray[i][3],
+					image: eventsArray[i][4]
+        });
+    }
+
+	  $(document).ready(function() {
+      // page is now ready, initialize the calendar...
+      $('#calendar').fullCalendar({
+			  events: formattedEventInfo, /*[
+        {
+            title: 'Wrecking Ball Tour',
+						fullTitle: 'Bruce SpringSteen - Wrecking Ball Tour',
+            start: 'Tue, 17 Jul 2012 19:00:00 GMT',
+            url: 'http://brucespringsteen.net/',
+						image: 'images/springsteen1_thumb.jpg'
+        },
+				{
+            title: 'My Event4',					// this is the name of the event as it appears on the calender
+						fullTitle: 'My Event4',			// this is the full name of the event - appear is dialog window						 
+            start: 'Sat, 14 Jul 2012 13:00:00 GMT',				// date of event
+            url: 'http://google.com/',	// website of event
+						image: 'images/castles.jpg' // image/logo of event
+        },
+				{
+            title: 'My Event2',
+						fullTitle: 'My Event 2',
+            start: 'Tue, 14 Aug 2012 13:00:00 GMT',
+            url: 'http://google.com/',
+						image: 'images/castle.jpg'
+        },
+				{
+            title: 'My Event3',
+						fullTitle: 'My Event3',
+            start: 'Sat, 21 Jul 2012 13:00:00 GMT',
+            url: 'http://google.com/',
+						image: 'images/castles.jpg'
+        }
+    		],*/
+    		eventClick: function(event) {
+          if (event.url) {
+            window.open(event.url);
+            return false;
+          }
+        },
+				eventMouseover: function(event) {
+				// pop up dialog window with event details when mouse moved over the event.
+				  $( "#dialog" ).dialog('open');
+				  document.getElementById("dialogtable").style.display="block";
+					document.getElementById("dialogevent").innerHTML = event.fullTitle ;
+					document.getElementById("dialogdate").innerHTML = event.start ;
+					document.getElementById("dialogwebsite").innerHTML = '<a href="' + event.url + '" target="_blank">' + event.url + '</a>' ;
+					document.getElementById("dialogimage").innerHTML = '<img src="' + event.image + '" alt="" />';
+
+				}
+// I commented this out because the of unstable dialog window appearing/disappearing when mouse events occur.
+// if the eventMouseout event is used the dialog flickers and is hard to read.
+//				eventMouseout: function(event) {
+//				  document.getElementById("dialogtable").style.display="none";
+//				  $( "#dialog" ).dialog('close');
+//				}
+      })
+    });
+	</script>
+</head>
+<body onload="swapAdvert()">
+ <!-- comments -->
+ <div id='container'>
+  <div id='header'>
+    <a id='headerimg' href="index.htm"><img src="images/castles.jpg" alt="" /></a>
+		<h1 id='headertext'>Dublin Event Portal</h1>
+  </div>
+  <div id='nav'>
+	  <ol id='eventmenu'>
+	    <li><a href="index.htm">Home</a></li>
+		  <li class='current'><a href="calender.htm">Calender</a></li>
+		  <li><a href="map.htm">Map</a></li>
+		  <li><a href="submit.htm">Submit</a></li>
+		  <li><a href="reviews.htm">Reviews</a></li>
+		  <li><a href="contact.htm">Contact</a></li>
+    </ol>
+	</div>
+  <div id='sidebar'>
+	  <div id='facebook'>
+		  <a id='facebooklink' href="http://www.facebook.com"><img src="images/facebook.jpg" alt="" /></a>
+	  </div>
+	  <hr id='sidedivider' />
+	  <div id='rssfeed'>
+    <script type="text/javascript" src="http://itde.vccs.edu/rss2js/feed2js.php?src=http%3A%2F%2Frss.feedsportal.com%2Fc%2F851%2Ff%2F10838%2Findex.rss&amp;chan=y&amp;num=3&amp;desc=0&amp;date=y&amp;targ=y"></script>
+    <noscript>
+      <p><a href="http://itde.vccs.edu/rss2js/feed2js.php?src=http%3A%2F%2Frss.feedsportal.com%2Fc%2F851%2Ff%2F10838%2Findex.rss&amp;chan=y&amp;num=3&amp;desc=0&amp;date=y&amp;targ=y&amp;html=y">View RSS feed</a></p>
+    </noscript>
+		</div>
+  </div>
+  <div id='content'>
+	  <div id="dialog" title="Event Details">
+	    <table id="dialogtable" style="display:none">
+			  <tr><td>Event: </td> <td id="dialogevent"></td></tr>
+				<tr><td>Date: </td> <td id="dialogdate"></td></tr>
+				<tr><td>Website: </td> <td id="dialogwebsite"></td></tr>
+				<tr><td></td> <td id="dialogimage"></td></tr>
+			</table>
+    </div>
+    <div id='calendar'></div>
+  </div>
+  <div id='adverts'>
+	  <img id='img1' src="images/adverts1.jpg" alt="" />
+		<img id='img2' src="images/adverts2.jpg" alt="" />
+		<img id='img3' src="images/adverts3.jpg" alt="" />
+  </div>
+  <div id='footer'>
+		<img id='footerimg' src="images/skyline.jpg" alt="" height="74px" width="200px" />
+		<p>&copy;Dublin Event Portal 2012</p>
+		<p><a href='mailto:info@dublineventportal.ie'>Email : info@dublineventportal.ie</a></p>
+  </div>
+ </div>
+</body>
+</html>

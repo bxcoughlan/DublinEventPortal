@@ -1,0 +1,42 @@
+.hovergallery img{border-style:outset;
+-webkit-transform:scale(1); /*Webkit: Scale down image to 1x original size*/
+-moz-transform:scale(1); /*Mozilla scale version*/
+-o-transform:scale(1); /*Opera scale version*/
+-webkit-transition-duration: 0.5s; /*Webkit: Animation duration*/
+-moz-transition-duration: 0.5s; /*Mozilla duration version*/
+-o-transition-duration: 0.5s; /*Opera duration version*/
+opacity: 0.7; /*initial opacity of images*/
+margin: 0 0 0 0; /*margin between images*/
+padding: 0 0 0 0;
+z-index: 1;
+}
+
+.hovergallery img:hover{
+-webkit-transform:scale(2); /*Webkit: Scale up image to 2.0x original size*/
+-moz-transform:scale(2); /*Mozilla scale version*/
+-o-transform:scale(2); /*Opera scale version*/
+box-shadow:0px 0px 30px lightblue; /*CSS3 shadow: 30px blurred shadow all around image*/
+-webkit-box-shadow:0px 0px 30px lightblue; /*Safari shadow version*/
+-moz-box-shadow:0px 0px 30px lightblue; /*Mozilla shadow version*/
+opacity: 1;
+z-index:2;
+}
+/* NOTE: in attempting to validating this CSS file, the following elements throw up errors:
+2 	.hovergallery img 	Property -webkit-transform doesn't exist : scale(1 )
+3 	.hovergallery img 	Property -moz-transform doesn't exist : scale(1 )
+4 	.hovergallery img 	Property -o-transform doesn't exist : scale(1 )
+5 	.hovergallery img 	Property -webkit-transition-duration doesn't exist : 0.5s
+6 	.hovergallery img 	Property -moz-transition-duration doesn't exist : 0.5s
+7 	.hovergallery img 	Property -o-transition-duration doesn't exist : 0.5s
+15 	.hovergallery img:hover 	Property -webkit-transform doesn't exist : scale(2 )
+16 	.hovergallery img:hover 	Property -moz-transform doesn't exist : scale(2 )
+17 	.hovergallery img:hover 	Property -o-transform doesn't exist : scale(2 )
+19 	.hovergallery img:hover 	Property -webkit-box-shadow doesn't exist : 0 0 30px lightblue
+20 	.hovergallery img:hover 	Property -moz-box-shadow doesn't exist : 0 0 30px lightblue 
+I have researched this online, and it seems the W3C CSS validator is not fully compliant with the new
+CSS3 standards, hence the above CSS# elements raise errors, where no errors exist  */
+
+
+#contentgallery {clear: both}
+#content {color:#000080; font-size:small; font-family:"Century Gothic"; }
+#content h3 {text-align:center; color:#000080; font-family:"Century Gothic"; }

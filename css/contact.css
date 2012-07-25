@@ -1,0 +1,42 @@
+/* paragraph font-size and h3 tag updated by myles 19/6/12 */ 
+#content p{font-size: small;color:navy;padding-left:2px; padding-right:2px;}
+h3{color:navy;}
+
+/* added form fieldset attributes here by myles 19/6/12 */
+/*form.contact fieldset{ */
+
+form.contact fieldset {
+border:2px solid navy;
+padding:10px;
+margin-left:15px;
+margin-right:15px;
+font-size:small;
+color:navy;
+}
+
+/* added legend attributes here by myles 19/6/12 */
+form.contact legend{
+font-weight: bold;
+font-size:small;
+color:navy;
+padding:5px;
+}
+/* added fixewidth tag here and attributes by myles 19/6/12 */
+form.contact label.fixedwidth {
+display: block;
+width: 240px;
+float:left;
+}
+
+#submit {background:url("../images/button.jpg") 100% 0 no-repeat; background-position:center; 
+background-size:60px 30px; margin-left:10px; font-size: 12px; padding: 17px 20px 18px 20px; border:none; color:#000080;}
+
+#reset { background:url("../images/button.jpg") 100% 0 no-repeat; background-position:center; 
+background-size:100px 30px; margin-left:20px; font-size: 12px; padding: 20px 20px 20px 20px; border: none; color:#000080;} 
+
+/* this can be included in the contact page later<input type="reset" id="reset" value="Clear all" 
+onmouseover="this.style.color='white'" onmouseout="this.style.color='#000080'"/>*/
+
+/* added buttonarea attributes here by myles 19/6/12 */
+
+

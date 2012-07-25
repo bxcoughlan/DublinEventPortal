@@ -1,0 +1,17 @@
+#content {color:#000080; font-size:small; }
+#content img{float:right}
+#content h3 {text-decoration:underline; font-family:"Century Gothic"; color:#000080; }
+#content p { font-family:"Century Gothic"; color:#000080; }
+#contentOAPE {clear: both}
+#contentConcerts {clear: both}
+#contentTheatre {clear: both}
+
+.star-rating{
+list-style: none; /* turn off the default list image bullets*/
+margin: 3px; /* I wan’t some space around this thing*/
+padding: 0px; /* I’m anal. I’m pretty sure OL’s have a default padding of 0px, but we’ll set it to 0px just to be safe*/
+width: 100px; /* This list is 5 stars, each star is 20px, therefore it should be 5 x 20px = 100px wide*/
+height: 20px; /* The height of each star is 20px. Since this is a horizontal list, we will set the list height to the height of the star.*/
+position: relative; /* Very important. We will be using absolute positioning later. We want to use relatively-absolute positioning.*/
+background: url(star_rating.gif) top left repeat-x; /* By repeating this image horizontally, the list will appear to have five stars.*/
+}

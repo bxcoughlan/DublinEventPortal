@@ -1,0 +1,82 @@
+#header,#footer,#sidebar,#content,#adverts  {
+    font-family:"Century Gothic";
+    margin-bottom: 10px;
+		background-color:#FFFFFF;
+		color:#000080;
+		}
+
+#container {background-color: #EBF5FC;
+    padding:1%; width: 95%;
+		margin-right:auto; margin-left:auto; 
+		max-width: 850px; min-width:850px; }
+/* I have set the max width of the site, as I want this to display with a certain layout, without
+   the various elements floating all over the screen. I have reduced the font-size of the header text in line
+	 with this. */
+
+#header {position:relative;
+    background: #EBF5FC url("../images/skyline.jpg") no-repeat right bottom;
+    max-height: 94px;
+		min-height: 94px; }
+				 
+#header, #sidebar, #content, #adverts, #footer {				
+	  border-bottom-style: solid;
+		border-right-style: solid;
+		border-color: #000080;
+		border-width: 1px;
+		 }
+				 
+#headertext {float:right; margin-right: 480px;
+	  font-size:25px;
+		color:#000080; }
+		
+#nav { margin: 0 0 0 26%}
+
+ol#eventmenu {font-family:"Century Gothic"; 
+              font-size:15px;
+							height:30px;
+							list-style:none;
+							padding:0;
+							margin:0; }
+							
+ol#eventmenu li {
+    background: #00B5EF url("../images/tabs2.jpg");
+    float: left;
+    margin: 0 1px 0 0;
+    padding-left: 10px; }
+
+ol#eventmenu a {
+    background: url("../images/tabs2.jpg") 100% 0;
+    color: #000080;
+    display:block;
+    float: left;
+    line-height: 30px;
+    padding-right: 10px;
+    text-decoration: none; }
+
+ol#eventmenu a:hover { color: #FFFFFF; }
+		
+ol#eventmenu li.current {
+    background-color: #000080;
+    background-position: 0 -60px; }
+ol#eventmenu li.current a {
+    background-position: 100% -60px;
+    color: #FFFFFF;
+    font-weight: bold;
+}					 
+#sidebar { float: left; width:20%; margin-right:2%; }
+#sidedivider { width: 90%; margin-right:auto; margin-left:auto; } 
+#rssfeed { font-size: 10px; }
+#content { font-size: 15px; float: left; width:60%; margin-right:2%; } /* had to reduce width to 57% because of border of 1px in place */
+
+#adverts { float: right; width: 15%; padding: 0; height: 349px; }
+#img1 { position:absolute; z-index:2; }
+#img2 { position:absolute; z-index:1; }
+#img3 { position:absolute; z-index:1; }
+
+#footer {clear: both; background-color: #EBF5FC; }
+#footercontact1 { padding-left: 520px; padding-top: 20px; }
+#footercontact2 { padding-left: 520px; margin-top: 5px; }
+
+#footerimg { float:left; }
+#w3valid { float:left; }
+

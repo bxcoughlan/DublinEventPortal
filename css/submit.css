@@ -1,0 +1,20 @@
+.submitTitle {margin-left: 10px; }
+
+fieldset { padding-top: 20px; border: solid; border-color: #000080; margin: 10px; font-size:small; }
+
+#submitdetails { font-size:small; }
+#submitdetails label { float:left; padding-bottom:10px; }
+#submitdetails input { font-family:"Century Gothic"; color:#000080; }
+
+#namelabel,#emaillabel,#weblabel { clear:both; }
+#subname,#subemail,#subwebsite { margin-bottom:5px; float:right; }
+
+.radiobuttons {clear:both; margin-left: 60px; }
+.eventradiocheck { margin-left: 20px; }
+
+textarea { resize: none; margin-top: 10px; margin-bottom: 10px; font-family:"Century Gothic"; color:#000080; font-size:small; }
+#userDetails, #location, #eventType, #textDesc, #userFeedback, #submitButtons { margin-top: 20px; clear:both; }
+
+#submit { background:url("../images/button.jpg") 100% 0 no-repeat; background-position:center; background-size:100px 30px; margin-left: 100px; font-size: small; padding: 17px 20px 18px 20px; border: none; color:#000080; }
+
+#reset { background:url("../images/button.jpg") 100% 0 no-repeat; background-position:center; background-size:100px 30px; margin-left: 20px; font-size: small; padding: 20px 20px 20px 20px; border: none; color:#000080; }
