@@ -49,14 +49,24 @@
     fingertips you'll be generating a new lexicon of excuses for staying indoors as there'll be an event/gig to your liking
     at your fingertips and quite literally on your doorstep!
     </p>
-		<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" data = "videos/video2.mp4" type="video/mp4" width="480" height="408" codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+		<object id="mediaplayer" classid="6BF52A52-394A-11d3-B153-00C04F79FAA6" codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#version=5,1,52,701" standby="loading microsoft windows media player components..." type="application/x-oleobject" width="480" height="408">
+      <param name="filename" value="videos/videoRDS.wmv">
+      <param name="animationatstart" value="true">
+      <param name="transparentatstart" value="true">
+      <param name="autostart" value="true">
+      <param name="showcontrols" value="true">
+      <param name="ShowStatusBar" value="true">
+      <param name="windowlessvideo" value="true">
+      <embed src="videos/videoRDS.wmv" autostart="true" showcontrols="true" showstatusbar="1" bgcolor="white" width="480" height="408">
+    </object>
+<!--		<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" data = "videos/video2.mp4" type="video/mp4" width="480" height="408" codebase="http://www.apple.com/qtactivex/qtplugin.cab">
       <param name="src" value="videos/video2.mp4" />
       <param name="autoplay" value="true" />
       <param name="controller" value="false" />
       <embed src="videos/video2.mp4" width="480" height="408" autoplay="true" controller="false" pluginspage="http://www.apple.com/quicktime/download/">
       </embed>
     </object>
-<!--		<object type="video/mp4" data="videos/video2.mp4" width="480" height="408">
+  	<object type="video/mp4" data="videos/video2.mp4" width="480" height="408">
       <param name="controller" value="true" />
       <param name="autoplay" value="false" />
         alt : <a href="video/video2.mp4">video2.mp4</a>
