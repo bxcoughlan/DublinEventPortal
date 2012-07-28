@@ -41,4 +41,4 @@ CSS3 standards, hence the above CSS# elements raise errors, where no errors exis
 #videodiv { clear: both; margin-left:41px; margin-right:auto; }
 #content {color:#000080; font-size:small; font-family:"Century Gothic"; }
 #content h3 { text-align:center; color:#000080; font-family:"Century Gothic"; }
-#content p { align:center; }
+#content p { text-align:center; }
