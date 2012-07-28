@@ -49,40 +49,38 @@
     fingertips you'll be generating a new lexicon of excuses for staying indoors as there'll be an event/gig to your liking
     at your fingertips and quite literally on your doorstep!
     </p>
-		<object id="mediaplayer" classid="6BF52A52-394A-11d3-B153-00C04F79FAA6" codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#version=5,1,52,701" standby="loading microsoft windows media player components..." type="application/x-oleobject" width="480" height="408">
-      <param name="filename" value="videos/videoRDS.wmv">
-      <param name="animationatstart" value="true">
-      <param name="transparentatstart" value="true">
-      <param name="autostart" value="true">
-      <param name="showcontrols" value="true">
-      <param name="ShowStatusBar" value="true">
-      <param name="windowlessvideo" value="true">
-      <embed src="videos/videoRDS.wmv" autostart="true" showcontrols="true" showstatusbar="1" bgcolor="white" width="480" height="408">
-    </object>
-<!--		<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" data = "videos/video2.mp4" type="video/mp4" width="480" height="408" codebase="http://www.apple.com/qtactivex/qtplugin.cab">
-      <param name="src" value="videos/video2.mp4" />
-      <param name="autoplay" value="true" />
-      <param name="controller" value="false" />
-      <embed src="videos/video2.mp4" width="480" height="408" autoplay="true" controller="false" pluginspage="http://www.apple.com/quicktime/download/">
-      </embed>
-    </object>
-  	<object type="video/mp4" data="videos/video2.mp4" width="480" height="408">
-      <param name="controller" value="true" />
-      <param name="autoplay" value="false" />
-        alt : <a href="video/video2.mp4">video2.mp4</a>
-    </object>
-     The following images are beneath the video file within the Div and have attributes within a seperate related css file -->
+<!--		<object id="mediaplayer" classid="6BF52A52-394A-11d3-B153-00C04F79FAA6" codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#version=5,1,52,701" standby="loading microsoft windows media player components..." type="application/x-oleobject" width="480" height="408">
+      <param name="filename" value="videos/videoRDS.wmv" />
+      <param name="animationatstart" value="true" />
+      <param name="transparentatstart" value="true" />
+      <param name="autostart" value="true" />
+      <param name="showcontrols" value="true" />
+      <param name="ShowStatusBar" value="true" />
+      <param name="windowlessvideo" value="true" />
+      <embed src="videos/videoRDS.wmv" autostart="true" showcontrols="true" showstatusbar="1" bgcolor="white" width="480" height="408"></embed>
+    </object> -->
+		<div id='videodiv' >
+		  <object id='eventvid' classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" data = "videos/videoRDS.mp4" type="video/mp4" width="427" height="336" codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+        <param name="src" value="videos/videoRDS.mp4" />
+	   		<param name="scale" value="aspect" />
+	  		<param name="autoplay" value="false" />
+        <param name="controller" value="true" />
+        <embed type="video/mp4" src="videos/videoRDS.mp4" width="427" height="336" autoplay="false" controller="true" pluginspage="http://www.apple.com/quicktime/download/" scale="aspect">
+        </embed>
+      </object>
+		</div>
+<!--     The following images are beneath the video file within the Div and have attributes within a seperate related css file -->
     <div id='contentgallery'>
 	  <h3>---------- Event pictures in your locality --------------</h3>
 	  <div class="hovergallery">
   		<img id='CON2' src="images/ConcertImages/CON2.jpg" alt="" title="Stephens Green Concert In The Park" height="75" width="112"/>
   		<img id='CON3' src="images/ConcertImages/CON3.jpg" alt="" title="Marley Park Live!" height="75" width="58"/>
   		<img id='CON6' src="images/ConcertImages/CON6.jpg" alt="" title="Concert at Croke Park" height="75" width="112"/>
-  		<img id='CON7' src="images/ConcertImages/CON7.jpg" alt="" title="Live @ Fitzwilliam Street!" height="75" width="112"/>
+  		<img id='CON7' src="images/ConcertImages/CON7.jpg" alt="" title="Live @ Fitzwilliam Street!" height="75" width="112"/></br>
   		<img id='CON9' src="images/ConcertImages/CON9.jpg" alt="" title="The Gaitey Experience" height="75" width="101"/>
   		<img id='THIMAGE2' src="images/ConcertImages/THIMAGE2.jpg" alt="" title="Oscar Wilde At The Gate" height="75" width="85"/>
   		<img id='THIMAGE3' src="images/ConcertImages/THIMAGE3.jpg" alt="" title="The Gate Theatre" height="75" width="112"/>
-  		<img id='breakdance' src="images/Activity/Breakdance.jpg" alt="" title="Breakdance Dublin!!" height="75" width="125"/>
+  		<img id='breakdance' src="images/Activity/Breakdance.jpg" alt="" title="Breakdance Dublin!!" height="75" width="125"/></br>
   		<img id='salsa' src="images/Activity/Salsa.jpg" alt=""  title="Templebar Salsa!!" height="75" width="116"/>
   		<img id='Carnival' src="images/Activity/Carnival.jpg" alt="" title="Camden Carnival!!" height="75" width="116"/>
 	  </div>

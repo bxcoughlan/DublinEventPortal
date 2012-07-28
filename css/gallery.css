@@ -37,6 +37,8 @@ I have researched this online, and it seems the W3C CSS validator is not fully c
 CSS3 standards, hence the above CSS# elements raise errors, where no errors exist  */
 
 
-#contentgallery {clear: both}
+.hovergallery { margin-left:30px; }
+#videodiv { clear: both; margin-left:41px; margin-right:auto; }
 #content {color:#000080; font-size:small; font-family:"Century Gothic"; }
-#content h3 {text-align:center; color:#000080; font-family:"Century Gothic"; }
+#content h3 { text-align:center; color:#000080; font-family:"Century Gothic"; }
+#content p { align:center; }
